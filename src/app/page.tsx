@@ -1,5 +1,7 @@
 import { db } from "~/server/db";
 
+export const dynamic = "force-dynamic";
+
 const mockUrls = [
   "https://utfs.io/f/9a4abed4-c979-4873-aefa-5e313e293d44-uyp24f.png",
   "https://utfs.io/f/763f9815-42c0-439c-9cd5-f22962e2d01f-278b.jpg",
