@@ -1,4 +1,6 @@
+import { SignedIn, SignedOut } from "@clerk/nextjs";
 import { db } from "~/server/db";
+import Gallery from "./_components/Gallery";
 
 export const dynamic = "force-dynamic";
 
@@ -9,13 +11,13 @@ export default async function HomePage() {
 
   return (
     <section>
-      <div className="flex flex-wrap">
-        {images.map((image) => (
-          <article key={image.id}>
-            <img className="w-60" src={image.url} alt={image.name} />
-          </article>
-        ))}
-      </div>
+      <SignedOut>
+        <p className="text-center">Please Sign in above...</p>
+      </SignedOut>
+
+      <SignedIn>
+        <Gallery images={images} />
+      </SignedIn>
     </section>
   );
 }
