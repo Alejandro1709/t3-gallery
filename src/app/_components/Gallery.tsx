@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 type GalleryProps = {
   images: {
     id: number;
@@ -8,10 +10,10 @@ type GalleryProps = {
 
 export default function Gallery({ images }: GalleryProps) {
   return (
-    <div className="flex flex-col flex-wrap md:flex-row">
+    <div className="flex flex-wrap">
       {images.map((image) => (
         <article key={image.id}>
-          <img className="w-full md:w-60" src={image.url} alt={image.name} />
+          <Image src={image.url} alt={image.name} width={192} height={192} />
         </article>
       ))}
     </div>
